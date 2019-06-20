@@ -23,7 +23,7 @@ public abstract class AbstractEntity implements Serializable {
 	public Long getId() {
 		return id;
 	}
-
+	
 	public int getVersion() {
 		return version;
 	}

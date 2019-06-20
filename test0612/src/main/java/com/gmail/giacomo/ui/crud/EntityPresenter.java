@@ -163,7 +163,7 @@ public class EntityPresenter<T extends AbstractEntity, V extends EntityView<T>>
 
 	public boolean loadEntity(Long id, CrudOperationListener<T> onSuccess) {
 		return executeOperation(() -> {
-			state.updateEntity(crudService.load(id), false);
+			state.updateEntity(crudService.load(currentUser.getUser(), id), false);
 			onSuccess.execute(state.getEntity());
 		});
 	}

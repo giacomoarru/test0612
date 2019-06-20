@@ -75,6 +75,6 @@ public class CrudEntityPresenter<E extends AbstractEntity>	implements HasLogger 
 	}
 	
 	public boolean loadEntity(Long id, Consumer<E> onSuccess) {
-		return executeOperation(() -> onSuccess.accept(crudService.load(id)));
+		return executeOperation(() -> onSuccess.accept(crudService.load(currentUser.getUser(), id)));
 	}
 }
